@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <div class="game__view">
-      <div class="game__view__action-area">
-        <div class="game__view__action-area__left-arrow"></div>
-        <div class="game__view__action-area__center"></div>
-        <div class="game__view__action-area__right-arrow"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/css-reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+
+  <body>
+    <script defer src="./main.js"></script>
+    <main>
+      <div class="game__view">
+        <div class="game__view__action-area">
+          <figure class="game__view__action-area__left-arrow">
+            <img src="./game-assets/arrow.png" alt="" />
+          </figure>
+
+          <div class="game__view__action-area__center">
+            <figure class="game__view__action-area__center__gk"></figure>
+            <figure class="game__view__action-area__center__ball">
+              <img src="./game-assets/ball.png" class="ball-img" alt="" />
+              <img
+                src="./game-assets/power-ball.png"
+                class="power-ball-img"
+                alt=""
+              />
+            </figure>
+          </div>
+
+          <figure class="game__view__action-area__right-arrow">
+            <img src="./game-assets/arrow.png" alt="" />
+          </figure>
+        </div>
       </div>
-    </div>
-    <div class="game__sidebar">
-      <div class="game__sidebar__score-board"></div>
-      <div class="game__sidebar__button"></div>
-    </div>
-  </main>
-  <script src="main.js"></script>
-</body>
+      <div class="game__sidebar">
+        <div class="game__sidebar__scoreboard">
+          Score: <span class="game__sidebar__scoreboard__score">0</span>
+        </div>
+        <div class="game__sidebar__score-counter"></div>
+        <button class="game__sidebar__power-btn">Power ball</button>
+        <button class="game__sidebar__start-btn">Click to shoot</button>
+        <button class="game__sidebar__next-round-btn">Next round</button>
+      </div>
+    </main>    
+  </body>
 </html>
