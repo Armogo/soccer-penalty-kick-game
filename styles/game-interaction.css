@@ -1,0 +1,82 @@
+/* GAME INTERACTION STYLE */
+
+/* arrow interaction */
+
+.arrow--left--clicked {
+  transform: scale(1.2, 1.2) rotate(var(--anticlockwise-rotate));
+}
+
+.arrow--right--clicked {
+  transform: scale(1.2, 1.2) rotate(var(--clockwise-rotate));
+}
+
+.power-btn--clicked {
+  background-image: linear-gradient(to bottom, red, yellow);
+  color: rgb(255, 255, 255);
+}
+
+/* gk interaction */
+
+.gk--left--fail-blocking {
+  animation: gk--left--fail-blocking 0.5s;
+}
+
+.gk--left--succeed-blocking {
+  animation: gk--left--succeed-blocking 0.5s;
+}
+
+.gk--left--hit-by-power-ball {
+  animation: gk--left--hit-by-power-ball 1s;
+}
+
+.gk--right--fail-blocking {
+  animation: gk--right--fail-blocking 0.5s;
+}
+
+.gk--right--succeed-blocking {
+  animation: gk--right--succeed-blocking 0.5s;
+}
+
+.gk--right--hit-by-power-ball {
+  animation: gk--right--hit-by-power-ball 1s;
+}
+
+.gk--left--fail-blocking,
+.gk--left--succeed-blocking,
+.gk--left--hit-by-power-ball,
+.gk--right--fail-blocking,
+.gk--right--succeed-blocking,
+.gk--right--hit-by-power-ball {
+  animation-fill-mode: forwards;
+}
+
+/* ball interaction */
+
+.ball--go-left {
+  transform: translate(
+    var(--ball--left--moving-X),
+    var(--ball--left--moving-Y)
+  );
+  transition: transform 0.3s;
+}
+
+.power-ball--go-left {
+  animation: power-ball--go-left 0.5s;
+}
+
+.ball--go-right {
+  transform: translate(
+    var(--ball--right--moving-X),
+    var(--ball--right--moving-Y)
+  );
+  transition: transform 0.3s;
+}
+
+.power-ball--go-right {
+  animation: power-ball--go-right 0.5s;
+}
+
+.power-ball--go-left,
+.power-ball--go-right {
+  animation-fill-mode: forwards;
+}
