@@ -126,7 +126,6 @@ main {
 }
 
 .game__sidebar__power-btn,
-.game__sidebar__start-btn,
 .game__sidebar__next-round-btn {
   min-height: 90px;
   width: 50%;
@@ -139,15 +138,6 @@ main {
 }
 
 .game__sidebar__power-btn:hover {
-  font-size: 1.2em;
-}
-
-.game__sidebar__start-btn {
-  background-color: rgb(241, 154, 22);
-  border: solid 2px rgb(180, 124, 38);
-}
-
-.game__sidebar__start-btn:hover {
   font-size: 1.2em;
 }
 

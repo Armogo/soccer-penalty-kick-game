@@ -45,7 +45,6 @@ const VIEW = {
   },
   btnElement: {
     powerBall: document.querySelector(".game__sidebar__power-btn"),
-    start: document.querySelector(".game__sidebar__start-btn"),
     nextRound: document.querySelector(".game__sidebar__next-round-btn"),
   },
 
@@ -74,10 +73,8 @@ const VIEW = {
   },
   btnUI() {
     if (CONTROLLER.currentState === GAME_STATE.showResult) {
-      this.btnElement.start.style.display = "none";
       this.btnElement.nextRound.style.display = "initial";
     } else if (CONTROLLER.currentState === GAME_STATE.chooseDirection) {
-      this.btnElement.start.style.display = "";
       this.btnElement.nextRound.style.display = "";
     }
   },
@@ -199,22 +196,22 @@ const CONTROLLER = {
     VIEW.arrowElement.left.addEventListener("click", () => {
       MODEL.playerShootingDirection = GAME_STATE.chooseLeftArrow;
       VIEW.changeArrowStyle();
+      if (this.currentState !== GAME_STATE.showResult) {
+        this.showResult();
+      }
     });
 
     VIEW.arrowElement.right.addEventListener("click", () => {
       MODEL.playerShootingDirection = GAME_STATE.chooseRightArrow;
       VIEW.changeArrowStyle();
+      if (this.currentState !== GAME_STATE.showResult) {
+        this.showResult();
+      }
     });
 
     VIEW.btnElement.powerBall.addEventListener("click", () => {
       MODEL.powerBallToggle = !MODEL.powerBallToggle;
       VIEW.changePowerBallStyle();
-    });
-
-    VIEW.btnElement.start.addEventListener("click", () => {
-      if (MODEL.playerShootingDirection) {
-        this.showResult();
-      }
     });
 
     VIEW.btnElement.nextRound.addEventListener("click", () => {
