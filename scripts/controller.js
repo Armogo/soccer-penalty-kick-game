@@ -17,6 +17,43 @@ const CONTROLLER = {
     VIEW.showScore();
   },
   addEventHandler() {
+    VIEW.bodyElement.addEventListener("keyup", (e) => {
+      let key = e.key;
+
+      switch (key) {
+        case "ArrowLeft": {
+          MODEL.playerShootingDirection = GAME_STATE.chooseLeftArrow;
+          break;
+        }
+
+        case "ArrowRight": {
+          MODEL.playerShootingDirection = GAME_STATE.chooseRightArrow;
+          break;
+        }
+
+        case " " || "Spacebar": {
+          if (this.currentState === GAME_STATE.showResult) {
+            return;
+          }
+
+          MODEL.powerBallToggle = !MODEL.powerBallToggle;
+          VIEW.changePowerBallStyle();
+          return;
+        }
+
+        default:
+          return;
+      }
+
+      VIEW.changeArrowStyle();
+
+      if (this.currentState !== GAME_STATE.showResult) {
+        this.showResult();
+      } else if (this.currentState === GAME_STATE.showResult) {
+        this.nextRound();
+      }
+    });
+
     VIEW.arrowElement.left.addEventListener("click", () => {
       MODEL.playerShootingDirection = GAME_STATE.chooseLeftArrow;
       VIEW.changeArrowStyle();

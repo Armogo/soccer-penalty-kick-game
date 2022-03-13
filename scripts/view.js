@@ -3,6 +3,7 @@ import { MODEL } from "./model.js";
 import { CONTROLLER } from "./controller.js";
 
 const VIEW = {
+  bodyElement: document.body,
   arrowElement: {
     left: document.querySelector(".game__view__action-area__left-arrow"),
     right: document.querySelector(".game__view__action-area__right-arrow"),
